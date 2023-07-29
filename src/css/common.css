@@ -1,0 +1,177 @@
+/* 공통 스타일 */
+
+/* 초기화 ------------------------------------ */
+body,
+h1,
+h2,
+p,
+fieldset,
+ul {
+	padding: 0;
+	margin: 0;
+}
+ul, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+input,
+textarea,
+select {
+	box-sizing: border-box;
+}
+
+select:enabled,
+button:enabled {
+	cursor: pointer;
+}
+
+/* layout --------------------------------- */
+body {
+	min-width: 950px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+	width: 950px;
+	margin: auto;
+}
+
+/* header */
+header {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+
+header .inner {
+	width: 1000px;
+	height: 90px;
+	margin: 0px auto;
+	position: relative;
+}
+
+header .inner h1 {
+	position: absolute;
+	left: 5px;
+	bottom: 15px;
+}
+
+header .inner h1 a {
+	font: bold 24px/1 "arial";
+	color: #444;
+}
+
+header .inner .util {
+	position: absolute;
+	text-align: end;
+	top: 18px;
+	right: 30px;
+}
+
+header .inner .util li {
+	float: left;
+}
+
+header .inner .util li a {
+	display: inline-flex;
+	align-items: center;
+	font: 12px/1 "arial";
+	color: #999;
+	padding: 0 10px;
+}
+
+header .inner .util li:nth-child(2) a {
+	padding: 0 3px;
+	height: 20px;
+}
+
+header .inner .util li a img {
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+}
+
+header .inner .util li .user-info {
+	display: flex;
+	font: 14px/1 "arial";
+	color: #3a3a3a;
+	padding: 0px 3px;
+}
+
+header .inner .util li a:hover {
+	box-pack: #999;
+	color: #141414;
+}
+
+header .inner #gnb {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+header .inner #gnb li {
+	float: left;
+}
+
+header .inner #gnb li a {
+	display: block;
+	font: bold 15px/1 "arial";
+	color: #555;
+	padding: 20px;
+	transition:	all 0.5s;
+}
+
+header .inner #gnb li a:hover {
+	box-pack: #555;
+	color: #b3b3b3;
+}
+
+
+
+/* footer */
+footer {
+	background-color: #c2c2c2;
+	text-align: center;
+	padding: 20px 0;
+	margin-top: 20px;
+}
+
+
+/* index main 내부 컨텐츠 --------------------------------- */
+.main-screen {
+	min-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-greeting {
+	text-align: center;
+	font-size: 80px;
+	padding: 15px 0;
+}
+
+.main-subtitle {
+	color: gray;
+	font-size: 26px;
+	padding-bottom: 50px;
+}
+
+.main-enter-btn{
+	background-color: royalblue;
+	border: 0;
+	border-radius: 7px;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 0;
+	width: 350px;
+}
