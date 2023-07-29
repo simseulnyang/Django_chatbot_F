@@ -5,11 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/css/common.css">
+
+    <!-- JS -->
+    <script type="module" src="/src/js/index.js"></script>
     <title>Chatbot</title>
 </head>
 
 <body>
+  <header>
+    <div class="inner">
+
+        <!-- LOGO -->
+        <h1><a href="/index.html">Chatbot</a></h1>
+
+        <!-- BLOG Menu -->
+        <ul id="gnb">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">History</a></li>
+        </ul>
+
+        <!-- login 관련 메뉴 -->
+        <ul class="util">
+            <li>
+                <a href="#">
+                    <h3 id="nickname"></h3>
+                </a>
+            </li>
+            <li><button type="button" id="loginout" class="loginout">로그아웃</button></li>
+        </ul>
+        <!-- <ul class="util">
+            <li><a href="/public/login.html">로그인</a></li>
+            <li><a href="/public/signup.html">회원가입</a></li>
+        </ul> -->
     
+      </div>
+    
+  </header>
+
+  <main>
+    <div class="main-screen">
+      <h1 class="main-greeting">Welcome!!</h1>
+      <p class="main-subtitle">챗봇과 대화해 보세요</p>
+        <a href="#" class="main-enter-btn" >채팅하기</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Copyright 2023. Simseulnyang All rights reserved.</p>
+  </footer>
 </body>
 
 </html>
