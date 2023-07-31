@@ -9,8 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/src/css/common.css">
 
-    <!-- JS -->
-    <script type="module" src="/src/js/index.js"></script>
+
     <title>Chatbot</title>
 </head>
 
@@ -28,19 +27,18 @@
         </ul>
 
         <!-- login 관련 메뉴 -->
+        <ul class="util active">
+          <li><a href="/public/login.html">Log in</a></li>
+          <li><a href="/public/signup.html">Join</a></li>
+        </ul>
         <ul class="util">
             <li>
                 <a href="#">
                     <h3 id="nickname"></h3>
                 </a>
             </li>
-            <li><button type="button" id="loginout" class="loginout">로그아웃</button></li>
-        </ul>
-        <!-- <ul class="util">
-            <li><a href="/public/login.html">로그인</a></li>
-            <li><a href="/public/signup.html">회원가입</a></li>
-        </ul> -->
-    
+            <li><button type="button" id="loginout" class="loginout"></button></li>
+        </ul>   
       </div>
     
   </header>
@@ -56,6 +54,10 @@
   <footer>
     <p>Copyright 2023. Simseulnyang All rights reserved.</p>
   </footer>
+
+  <!-- JS -->
+  <script type="module" src="/src/js/index.js"></script>
+
 </body>
 
 </html>
