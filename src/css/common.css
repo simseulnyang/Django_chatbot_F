@@ -43,6 +43,17 @@ main {
 	margin: auto;
 }
 
+.sr-only{
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
 /* header */
 header {
 	width: 100%;
@@ -63,15 +74,22 @@ header .inner h1 {
 }
 
 header .inner h1 a {
-	font: bold 24px/1 "arial";
+	font: bold 30px/1 "arial";
 	color: #444;
 }
 
 header .inner .util {
 	position: absolute;
 	text-align: end;
-	top: 18px;
+	top: 12px;
 	right: 30px;
+	opacity: 0;
+    visibility: hidden;
+}
+
+header .inner .util.active {
+	opacity: 1;
+	visibility: visible;
 }
 
 header .inner .util li {
@@ -81,7 +99,7 @@ header .inner .util li {
 header .inner .util li a {
 	display: inline-flex;
 	align-items: center;
-	font: 12px/1 "arial";
+	font: 18px/1 "arial";
 	color: #999;
 	padding: 0 10px;
 }
@@ -89,6 +107,26 @@ header .inner .util li a {
 header .inner .util li:nth-child(2) a {
 	padding: 0 3px;
 	height: 20px;
+}
+
+header .inner .util li a h3 {
+	display: inline-flex;
+	align-items: center;
+	font: 16px/1 "arial";
+	color: #373737;
+	padding: 0 2px;
+	margin: 10px 0;
+}
+
+header .inner .util li:nth-child(2) button {
+	display: inline-flex;
+	align-items: center;
+	font: 14px/1 "arial";
+	color: #999;
+	border : 0;
+	background-color: #fff;
+	height: 20px;
+	margin: 8px 0;
 }
 
 header .inner .util li a img {
@@ -121,7 +159,7 @@ header .inner #gnb li {
 
 header .inner #gnb li a {
 	display: block;
-	font: bold 15px/1 "arial";
+	font: bold 20px/1 "arial";
 	color: #555;
 	padding: 20px;
 	transition:	all 0.5s;
