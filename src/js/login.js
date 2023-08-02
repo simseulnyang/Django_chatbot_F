@@ -1,15 +1,16 @@
 import { backend_base_url, frontend_base_url } from "./urls.js";
 
+
 // 로그인
 const signin_button = document.getElementById('login-btn');
-signin_button.addEventListener('click', async function() {
-    
+signin_button.addEventListener('click', function() {
+
     const signinData = {
         'email' : document.getElementById('exampleDropdownFormEmail1').value,
         'password' : document.getElementById('exampleDropdownFormPassword1').value,
     };
 
-    const response = await fetch(`${backend_base_url}/user/api/token/`,{
+    const response = fetch(`${backend_base_url}/user/api/season/token/`,{
         headers: {
             'Content-type' : 'application/json',
         },
@@ -29,9 +30,11 @@ signin_button.addEventListener('click', async function() {
     
         localStorage.setItem("payload", jsonPayload);
         window.location.replace(`${frontend_base_url}/`);
+
     }).catch((err) => {
         alert(response.status);
         console.log(err);
     });
-});
 
+
+});
