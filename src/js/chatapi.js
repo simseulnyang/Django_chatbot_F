@@ -1,30 +1,42 @@
 import { backend_base_url } from "./urls.js";
 
-export const apiResponse = (prompt) => { fetch(`${backend_base_url}/chat/chatbot/`, {
+const token = localStorage.getItem("access");
+export const apiResponse = (prompt) => {
+  fetch(`${backend_base_url}/chat/api/chatbot/`, {
     headers: {
-        'Content-type' : 'application/json',
+      Authorization: `Bearer ${token}`,
+      'Content-type': 'application/json',
     },
-    method:'POST',
-    body:JSON.stringify({
-        'prompt' : prompt
+    method: 'POST',
+    body: JSON.stringify({
+      'prompt': prompt
     }),
-})
-.then((res) => res.json())
-.then(data => {
-    const response = data.response;
-    const $chatUl = document.querySelector('.chat_list')
-    const $responseLi = document.createElement('li');
-    $responseLi.classList.add('response_content');
-    $responseLi.innerHTML = `
+  })
+    .then((res) => {
+      if (res.status === 200) {
+        return res.json();
+      } else {
+        throw new Error(`API 요청에 실패했습니다. statusCode: ${res.status}`);
+      }
+    })
+    .then(data => {
+      const response = data.response;
+      const $chatUl = document.querySelector('.chat_list');
+      const $responseLi = document.createElement('li');
+      $responseLi.classList.add('response_content');
+      $responseLi.innerHTML = `
         <div class="response_text">
-            <div class="response_sender">
-                <span>AI Chatbot</span>
-            </div>
-            <div class="response_content">
-                ${response}
-            </div>
-        </div>    
-    `;
-    $chatUl.appendChild($responseLi);
-});
+          <div class="response_sender">
+            <span>AI Chatbot</span>
+          </div>
+          <div class="response_content">
+            ${response}
+          </div>
+        </div>
+      `;
+      $chatUl.appendChild($responseLi);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 };
