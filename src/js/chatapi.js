@@ -19,8 +19,9 @@ export const apiResponse = (prompt) => {
         throw new Error(`API 요청에 실패했습니다. statusCode: ${res.status}`);
       }
     })
-    .then(data => {
-      const response = data.response;
+    .then(res => {
+      console.log(res);
+      const response = res.conversations[0].response;
       const $chatUl = document.querySelector('.chat_list');
       const $responseLi = document.createElement('li');
       $responseLi.classList.add('response_content');
