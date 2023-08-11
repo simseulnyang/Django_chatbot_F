@@ -1,0 +1,36 @@
+.signup-content{
+    width: 550px;
+    margin: 80px auto 0;
+}
+
+.signup-content .h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+.signup-content .description{
+    text-align: center;
+    color: gray;
+    margin-bottom: 40px;
+}
+
+.signup-content .form-floating{
+    margin: 0 auto 20px;
+    width: 460px;
+}
+
+.signup-content .form-floating input {
+    padding: 5px 12px;
+}
+
+.signup-content .d-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-content .d-grid .btn {
+    margin-top: 20px;
+    width: 460px;
+    height: 45px;
+}
