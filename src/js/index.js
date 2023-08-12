@@ -23,14 +23,15 @@ if (!parsed_payload) {
     loginoutButton.innerText= 'Log out';
     refreshToken()
 
+    loginoutButton.addEventListener('click', (e) => {
+        logout();
+    })
+    
     main_btn.addEventListener('click', (e) => {
         e.preventDefault();
         location.href="../public/chat.html";
     })
 
-    loginoutButton.addEventListener('click', (e) => {
-        logout();
-    })
 
 }
 
