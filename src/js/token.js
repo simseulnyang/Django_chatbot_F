@@ -65,11 +65,12 @@ export const forTokenWhenClosing = () => {
     });
 
     document.addEventListener('keydown', function (e) {
-        if (e.keyCode == 91 || e.keyCode == 18) {
+        const key = e.key || e.keyCode
+        if (key === 'Alt' || key === 'Tab' || key === 9 || key === 18) {
             closingWindow = false; // 단축키 ALT+TAB (창 변경)
         }
         
-        if (e.keyCode == 116 || (e.ctrlKey && e.keyCode == 82)) {
+        if (key === 'F5' || (key === 'Ctrl' && key === 'r') || key === 116 || (key === 17  && key === 82)) {
             closingWindow = false; // 단축키 F5, CTRL+F5, CTRL+R (새로고침)
         }
     });
