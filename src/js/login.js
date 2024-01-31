@@ -1,40 +1,48 @@
-import { backend_base_url, frontend_base_url } from "./urls.js";
+import { backend, frontend } from "./urls.js";
 
 
 // 로그인
 const signin_button = document.getElementById('login-btn');
-signin_button.addEventListener('click', function() {
+signin_button.addEventListener('click', async (e) => {
+    e.preventDefault();
 
     const signinData = {
         'email' : document.getElementById('exampleDropdownFormEmail1').value,
         'password' : document.getElementById('exampleDropdownFormPassword1').value,
     };
 
-    const response = fetch(`${backend_base_url}/user/api/season/token/`,{
-        headers: {
-            'Content-type' : 'application/json',
-        },
-        method:'POST',
-        body:JSON.stringify(signinData),
-    })
-    .then((res) => res.json())
-    .then((res) => {
-        localStorage.setItem("access", res.access)
-        localStorage.setItem("refresh", res.refresh)
+    try {
+        const response = await fetch(backend + '/api/user/login/',{
+            headers: {
+                'Content-type' : 'application/json',
+            },
+            method:'POST',
+            body:JSON.stringify(signinData),
+        })
 
-        const base64Url = res.access.split('.')[1];
+        if (!response.ok) {
+            const errorData = await response.json()
+            alert(errorData.detail || '로그인에 실패했습니다.');
+            return;
+        }
+
+        const res = await response.json();
+
+        const access_token = res.token.access
+        localStorage.setItem('access_token', access_token)
+
+        const base64Url = access_token.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
         const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-    
+
         localStorage.setItem("payload", jsonPayload);
-        window.location.replace(`${frontend_base_url}/`);
+        window.location.replace(frontend)
 
-    }).catch((err) => {
-        alert(response.status);
-        console.log(err);
-    });
-
-
+    } catch (error) {
+        console.error(error.message);
+        alert('오류가 발생했습니다. 다시 시도해주세요.');
+    }
+    
 });
