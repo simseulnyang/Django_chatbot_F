@@ -29,7 +29,7 @@ if (!parsed_payload) {
     
     main_btn.addEventListener('click', (e) => {
         e.preventDefault();
-        location.href="../public/chat.html";
+        location.href="../public/chatroom_list.html";
     })
 
 
