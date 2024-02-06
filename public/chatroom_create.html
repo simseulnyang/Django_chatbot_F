@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/css/common.css">
+    <link rel="stylesheet" href="/src/css/chatcreate.css">
+    
+    <title>chatroom_create</title>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+    
+            <!-- LOGO -->
+            <h1><a href="/index.html">Chatbot</a></h1>
+    
+            <!-- BLOG Menu -->
+            <ul id="gnb">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">History</a></li>
+            </ul>
+    
+            <!-- login 관련 메뉴 -->
+            <ul class="util active">
+                <li><a href="/public/login.html">Log in</a></li>
+                <li><a href="/public/signup.html">Join</a></li>
+            </ul>
+            <ul class="util">
+                <li>
+                    <a href="#">
+                        <h3 id="nickname"></h3>
+                    </a>
+                </li>
+                <li><button type="button" id="loginout" class="loginout"></button></li>
+            </ul>   
+        </div>
+        
+    </header>
+
+    <main>
+        <form>
+            <div class="card">
+                <div class="card-header">
+                    ChatPlayingRoom 생성
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            <label for="language">Language</label>
+                            <select name="language" id="language">
+                                <option value="en-US">English</option>
+                                <option value="ko-kr">Korean</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="level">Level</label>
+                            <select name="level" id="level">
+                                <option value="1">초급</option>
+                                <option value="2">고급</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="situation">Situation</label>
+                            <input type="text" id="situation">
+                        </li>
+                        <li>
+                            <label for="situation_en">Situation_en</label>
+                            <input type="text" id="situation_en">
+                        </li>
+                        <li>
+                            <label for="my_role">My Role</label>
+                            <input type="text" id="my_role">
+                        </li>
+                        <li>
+                            <label for="my_role_en">My_Role_en</label>
+                            <input type="text" id="my_role_en">
+                        </li>
+                        <li>
+                            <label for="gpt_role">GPT Role</label>
+                            <input type="text" id="gpt_role">
+                        </li>
+                        <li>
+                            <label for="gpt_role_en">GPT_Role_en</label>
+                            <input type="text" id="gpt_role_en">
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-secondary" id="btn-chatroom-create">생성하기</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Copyright 2023. Simseulnyang All rights reserved.</p>
+    </footer>
+    
+    <!-- JS -->
+    <script defer type="module" src="/src/js/index.js"></script>
+    <script defer type="module" src="/src/js/chatcreate.js"></script>
+</body>
+
+</html>
