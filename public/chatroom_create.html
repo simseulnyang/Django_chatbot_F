@@ -65,29 +65,32 @@
                                 <option value="2">고급</option>
                             </select>
                         </li>
+                        <p>대화를 나누게 될 상황을 적어주세요. 해당 내용이 자동으로 번역되어 situation_en에 저장됩니다.</p>
                         <li>
                             <label for="situation">Situation</label>
                             <input type="text" id="situation">
                         </li>
                         <li>
                             <label for="situation_en">Situation_en</label>
-                            <input type="text" id="situation_en">
+                            <input type="text" id="situation_en" placeholder=" 자동으로 번역되어 저장되는 구간입니다. 작성하지 않으셔도 됩니다.">
                         </li>
+                        <p>본인의 역할을 적어주세요. 해당 내용이 자동으로 번역되어 my_role_en에 저장됩니다.</p>
                         <li>
                             <label for="my_role">My Role</label>
                             <input type="text" id="my_role">
                         </li>
                         <li>
                             <label for="my_role_en">My_Role_en</label>
-                            <input type="text" id="my_role_en">
+                            <input type="text" id="my_role_en" placeholder=" 자동으로 번역되어 저장되는 구간입니다. 작성하지 않으셔도 됩니다.">
                         </li>
+                        <p>gpt가 맡게 될 역할을 적어주세요. 해당 내용이 자동으로 번역되어 gtp_role_en에 저장됩니다.</p>
                         <li>
                             <label for="gpt_role">GPT Role</label>
                             <input type="text" id="gpt_role">
                         </li>
                         <li>
                             <label for="gpt_role_en">GPT_Role_en</label>
-                            <input type="text" id="gpt_role_en">
+                            <input type="text" id="gpt_role_en" placeholder=" 자동으로 번역되어 저장되는 구간입니다. 작성하지 않으셔도 됩니다.">
                         </li>
                     </ul>
                 </div>
@@ -102,7 +105,7 @@
     
     <!-- JS -->
     <script defer type="module" src="/src/js/index.js"></script>
-    <script defer type="module" src="/src/js/chatcreate.js"></script>
+    <script type="module" src="/src/js/chatcreate.js"></script>
 </body>
 
 </html>
