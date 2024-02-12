@@ -19,40 +19,30 @@
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.prompt_text {
-    margin: 10px;
-    padding: 10px;
-    background-color: rgb(182, 221, 255);
-    border: 1px solid rgb(153, 198, 198);
-    border-radius: 10px;
-    font-size: 18px;
+.chat-message .message {
+    background-color: #3b3b3d;
+    color: #e1e1e1;
+    border-radius: 0.8em;
+    padding: 0.4em;
+    margin: 0.4em 0;
+    display: inline-block;
+    white-space: pre-wrap;
 }
 
-.prompt_sender {
-    font-weight: bold;
-    margin-bottom: 10px;
-
+.chat-message.me {
+    text-align: right;
 }
-
-.prompt_content {
-    padding-left: 10px;
+.chat-message.me .message {
+    background-color: #1f8cff;
+    color: #fff;
+    text-align: left;
 }
-
-.response_text {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid rgb(153, 198, 198);
-    border-radius: 10px;
-    font-size: 18px;
-}
-
-.response_sender {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.response_content {
-    padding-left: 10px;
+.chat-message .say {
+    display: block;
+    font-size: .8em;
+    margin-top: -0.4em;
+    margin-left: 0.2em;
+    cursor: pointer;
 }
 
 

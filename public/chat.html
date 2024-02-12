@@ -48,7 +48,7 @@
     <!-- 채팅창 section -->
     <section class="chat_screen">
       <div class="chat_wrap">
-        <ul class="chat_list">
+        <ul class="chat_list" id="chat-list">
 
         </ul>
       </div>
@@ -56,11 +56,11 @@
     
     <!-- 질문Input section -->
     <section class="chat_input">
-      <form class="chat_form">
+      <form class="chat_form" id="message-form">
         <div class="input_wrap">
           <label for="prompt_input" class="sr-only">질문하기</label>
-          <input class="prompt_input" id="prompt_input" rows="2">
-          <button type="submit" class="prompt_btn" id="prompt_btn"></button>
+          <input type="text" name="message" placeholder="메세지를 입력하세요" class="prompt_input" id="prompt_input" rows="2">
+          <button class="prompt_btn" id="prompt_btn"></button>
         </div>
       </form>
     </section>
