@@ -28,7 +28,7 @@ window.onload = async () => {
         if (!access_token) {
             chatroomAddress = "/public/login.html"
         } else {
-            chatroomAddress = "/public/chat.html?id="+ chatroomData.id + "/"
+            chatroomAddress = `/public/chat.html?id=${chatroomData.id}&language=${chatroomData.language}/`
         }
 
         switch (chatroomData.language) {
