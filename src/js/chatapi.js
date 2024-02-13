@@ -1,8 +1,8 @@
-import { backend_base_url } from "./urls.js";
+import { backend } from "./urls.js";
 
 const token = localStorage.getItem("access");
 export const apiResponse = (prompt) => {
-  fetch(`${backend_base_url}/chat/api/chatbot/`, {
+  fetch(`${backend}/chat/api/chatbot/`, {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-type': 'application/json',
